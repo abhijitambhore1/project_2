@@ -78,7 +78,7 @@ F. pywps:
 31. sudo nano /etc/apache2/sites-available/pywps.conf
 
 32. add the following lines:
-
+# PyWPS
 WSGIDaemonProcess pywps home=/var/www/html/wsgi user=www-data group=www-data processes=2 threads=5
 WSGIScriptAlias /pywps /var/www/html/wsgi/pywps.wsgi process-group=pywps
 
@@ -101,7 +101,7 @@ import os
 
 sys.path.append("/var/www/html/")
 
-
+# processes need to be installed in PYTHON_PATH
 from processes.sayhello import SayHello
 
 processes = [
@@ -174,9 +174,12 @@ class SayHello(Process):
 
 39. sudo nano /var/www/html/processes/__init__.py
 
+#this file is empty
+
 
 40. sudo nano /var/www/html/logs/pywps.log
 
+#this file is empty
 
 
 41. sudo mkdir /var/www/html/outputs
